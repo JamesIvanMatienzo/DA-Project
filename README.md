@@ -16,22 +16,6 @@ no private client data, no setup headaches.
 
 ---
 
-## Quickstart — first win in 2 minutes
-
-The fastest path is Google Colab (one click, zero install). Open Notebook 1 and run all cells:
-
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/JamesIvanMatienzo/DA-Project/blob/main/notebooks/01_first_look_and_discovery.ipynb?flush_cache=true)
- **Week 1 — Run it, then discover a real truth yourself**
-
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/JamesIvanMatienzo/DA-Project/blob/main/notebooks/02_your_first_readable_model.ipynb?flush_cache=true)
- **Week 2 — The model is just a rule you can read**
-
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/JamesIvanMatienzo/DA-Project/blob/main/notebooks/03_working_with_the_full_release.ipynb?flush_cache=true)
- **Weeks 3+ — The full release (~79M rows) via DuckDB, no download needed** — hosted at
- [`FlyRank/internship-warehouse`](https://huggingface.co/datasets/FlyRank/internship-warehouse) (gated: request access + accept the data-use terms, approval is instant)
-
----
-
 ## Project Notebooks — 3-Notebook Modular Architecture
 
 The project provides three template notebooks in [`work/notebooks/`](file:///c:/Users/Matienzo/Desktop/DA-Project/work/notebooks) structured with rich markdown word guides, hypothesis framing, and clear `# TODO` code cells for independent experimentation:
