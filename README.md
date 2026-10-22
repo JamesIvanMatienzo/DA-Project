@@ -43,8 +43,6 @@ jupyter notebook work/notebooks/
 
 | Path | What it is |
 |---|---|
-| `notebooks/` | Week 1–2 **first-win notebooks** (Colab-ready). Start here. |
-| `scripts/01–05` + `run_all.py` | The runnable reference pipeline: prepare → baseline → train → evaluate → PDF. |
 | `data/raw/content_refresh_anonymized.csv` | The anonymized starter dataset (~30k pages). |
 | `outputs/` | Example outputs so you can see the **target shape** (`model_report.md`, `refresh_queue_sample.csv`, `charts/`). |
 | `work/` | **Your space.** Lane experiments and your capstone live here — see `work/README.md`. |
