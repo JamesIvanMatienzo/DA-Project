@@ -138,7 +138,7 @@ with tab_calc:
                 "computes all **48 model features** (`1/rank` power law, `log(1+x)` transforms, demand synergies, and category tiers)."
             )
 
-    with st.expander("🔍 Optional Comparison: Enter Current Impressions (to calculate Refresh Upside Gap)", expanded=False):
+    with st.expander("🔍 Optional Comparison: Enter Current Impressions (to calculate Refresh Upside Gap)", expanded=True):
         st.caption(
             "**Defense Note:** `Current Impressions` is **never** passed into the ML model ($X$). "
             "It is only subtracted *after* the model predicts ($\\hat{y} - y$) to measure how much extra traffic an existing page can gain."
@@ -165,6 +165,19 @@ with tab_calc:
                 key="in_main_intent",
             )
 
+    # Check if the 5 core inputs match any of the 8 curated DEMO_PRESETS
+    matched_preset = None
+    for p_val in DEMO_PRESETS.values():
+        if (
+            word_count == int(p_val["word_count"])
+            and abs(avg_position - float(p_val["avg_position"])) < 1e-4
+            and search_volume == int(p_val["search_volume"])
+            and sessions_90d == int(p_val["sessions_90d"])
+            and days_since_last_update == int(p_val["days_since_last_update"])
+        ):
+            matched_preset = p_val
+            break
+
     # Auto-derive the remaining engineered features
     base_p = st.session_state.get("base_preset", {})
     core_unchanged = (
@@ -176,7 +189,12 @@ with tab_calc:
         and days_since_last_update == int(base_p.get("days_since_last_update", -1))
     )
 
-    if core_unchanged:
+    if matched_preset is not None:
+        live_input = dict(matched_preset)
+        live_input["content_type"] = content_type
+        live_input["main_intent"] = main_intent
+        live_input["actual_impressions_90d"] = actual_impressions_90d
+    elif core_unchanged:
         live_input = dict(base_p)
         live_input["content_type"] = content_type
         live_input["main_intent"] = main_intent
@@ -196,9 +214,9 @@ with tab_calc:
             "char_count": int(round(word_count * 6.2)),
             "avg_position": avg_position,
             "search_volume": search_volume,
-            "competition": float(base_p.get("competition", 0.25)),
-            "cpc": float(base_p.get("cpc", 1.20)),
-            "content_age_days": max(int(base_p.get("content_age_days", 300)), days_since_last_update + 30),
+            "competition": 0.0,
+            "cpc": 0.94,
+            "content_age_days": max(390, days_since_last_update + 30),
             "days_since_last_update": days_since_last_update,
             "sessions_90d": sessions_90d,
             "pageviews_90d": pageviews_90d,
