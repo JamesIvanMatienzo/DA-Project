@@ -305,10 +305,10 @@ def row_to_preset_dict(row: pd.Series) -> dict:
 
 
 # ==============================================================================
-# CURATED REAL-WORLD ARTICLE SCENARIOS FOR LIVE SYSTEM TESTING
+# CURATED REAL-WORLD ARTICLE SCENARIOS FOR LIVE SYSTEM TESTING (ALL 6 CONCLUSIONS)
 # ==============================================================================
 DEMO_PRESETS = {
-    "Scenario 1: Striking-Distance Pillar Article (Rank #8.3)": {
+    "Scenario 1: Striking-Distance Pillar Article (Rank #8.3 -> SERP Push)": {
         "description": (
             "In-depth 3,292-word informational guide ranking at #8.3 on Google for a 1,600/mo keyword "
             "with 222 organic sessions. System predicts ~28,239 impressions and recommends a Top-3 SERP push."
@@ -335,37 +335,10 @@ DEMO_PRESETS = {
         "ai_traffic_pct": 0.0,
         "actual_impressions_90d": 2129,
     },
-    "Scenario 2: Under-Indexed Page-1 Article (Rank #8.0)": {
-        "description": (
-            "1,312-word informational article sitting at Google Rank #8.0 with 260 monthly search volume "
-            "and 13 sessions, untended for 92 days. System predicts ~1,110 impressions over 90 days."
-        ),
-        "content_type": "keyword article",
-        "main_intent": "informational",
-        "word_count": 1312,
-        "char_count": 8153,
-        "avg_position": 8.0,
-        "search_volume": 260,
-        "competition": 0.0,
-        "cpc": 0.0,
-        "content_age_days": 238,
-        "days_since_last_update": 92,
-        "sessions_90d": 13,
-        "pageviews_90d": 13,
-        "users_90d": 12,
-        "engaged_sessions_90d": 0,
-        "days_with_sessions": 10,
-        "engagement_rate": 0.0,
-        "scroll_rate": 7.69,
-        "scroll_events_90d": 1,
-        "ai_sessions_90d": 0,
-        "ai_traffic_pct": 0.0,
-        "actual_impressions_90d": 1,
-    },
-    "Scenario 3: Thin Article on High-Demand Keyword (650 Words)": {
+    "Scenario 2: Thin Article on High-Demand Keyword (650 Words -> Content Expansion)": {
         "description": (
             "Short 650-word article targeting a high-demand keyword (2,400 monthly searches) at Rank #11.5 (Page 2). "
-            "System detects content depth bottleneck and prescribes Content Expansion (>1,500 words)."
+            "System predicts ~1,897 impressions and prescribes Content Expansion (>1,500 words)."
         ),
         "content_type": "keyword article",
         "main_intent": "informational",
@@ -373,26 +346,26 @@ DEMO_PRESETS = {
         "char_count": 4030,
         "avg_position": 11.5,
         "search_volume": 2400,
-        "competition": 0.35,
-        "cpc": 1.85,
-        "content_age_days": 210,
+        "competition": 0.0,
+        "cpc": 0.94,
+        "content_age_days": 390,
         "days_since_last_update": 145,
         "sessions_90d": 35,
-        "pageviews_90d": 44,
-        "users_90d": 33,
-        "engaged_sessions_90d": 2,
+        "pageviews_90d": 40,
+        "users_90d": 34,
+        "engaged_sessions_90d": 1,
         "days_with_sessions": 24,
-        "engagement_rate": 5.71,
-        "scroll_rate": 18.2,
-        "scroll_events_90d": 8,
-        "ai_sessions_90d": 1,
-        "ai_traffic_pct": 2.8,
+        "engagement_rate": 2.86,
+        "scroll_rate": 6.0,
+        "scroll_events_90d": 2,
+        "ai_sessions_90d": 0,
+        "ai_traffic_pct": 0.0,
         "actual_impressions_90d": 45,
     },
-    "Scenario 4: Stale Authority Guide (240 Days Since Update)": {
+    "Scenario 3: Stale Authority Guide (240 Days Since Update -> Freshness Refresh)": {
         "description": (
-            "Comprehensive 3,800-word commercial guide at Rank #6.5 with 1,200 search volume, but untouched for "
-            "240 days (>180d threshold). System flags Stale Authority Decay and prescribes a Freshness Refresh."
+            "Comprehensive 3,800-word commercial guide at Rank #6.5 with 1,200 search volume, untouched for "
+            "240 days (>180d threshold). System predicts ~5,977 impressions and prescribes a Freshness Refresh."
         ),
         "content_type": "keyword article",
         "main_intent": "commercial",
@@ -400,27 +373,81 @@ DEMO_PRESETS = {
         "char_count": 23560,
         "avg_position": 6.5,
         "search_volume": 1200,
-        "competition": 0.40,
-        "cpc": 2.50,
-        "content_age_days": 450,
+        "competition": 0.0,
+        "cpc": 0.94,
+        "content_age_days": 390,
         "days_since_last_update": 240,
         "sessions_90d": 120,
-        "pageviews_90d": 155,
-        "users_90d": 112,
-        "engaged_sessions_90d": 4,
-        "days_with_sessions": 48,
-        "engagement_rate": 3.33,
-        "scroll_rate": 22.0,
-        "scroll_events_90d": 34,
-        "ai_sessions_90d": 2,
-        "ai_traffic_pct": 1.6,
+        "pageviews_90d": 138,
+        "users_90d": 115,
+        "engaged_sessions_90d": 2,
+        "days_with_sessions": 44,
+        "engagement_rate": 1.67,
+        "scroll_rate": 6.0,
+        "scroll_events_90d": 8,
+        "ai_sessions_90d": 0,
+        "ai_traffic_pct": 0.0,
         "actual_impressions_90d": 950,
     },
-    "Scenario 5: Low-Potential Over-Resourced Page (Do Not Rewrite)": {
+    "Scenario 4: Under-Indexed Top-3 Comparison (Rank #2.5 -> Comprehensive SEO Refresh)": {
+        "description": (
+            "2,100-word commercial comparison article at Rank #2.5 with 1,800 search volume and 160 sessions, "
+            "getting only 400 impressions. System predicts ~45,921 impressions and prescribes Comprehensive SEO Refresh."
+        ),
+        "content_type": "comparison article",
+        "main_intent": "commercial",
+        "word_count": 2100,
+        "char_count": 13020,
+        "avg_position": 2.5,
+        "search_volume": 1800,
+        "competition": 0.0,
+        "cpc": 0.94,
+        "content_age_days": 390,
+        "days_since_last_update": 45,
+        "sessions_90d": 160,
+        "pageviews_90d": 184,
+        "users_90d": 154,
+        "engaged_sessions_90d": 3,
+        "days_with_sessions": 51,
+        "engagement_rate": 1.88,
+        "scroll_rate": 6.0,
+        "scroll_events_90d": 11,
+        "ai_sessions_90d": 0,
+        "ai_traffic_pct": 0.0,
+        "actual_impressions_90d": 400,
+    },
+    "Scenario 5: Healthy Flagship Page at Capacity (Rank #2.0 -> Hold & Monitor)": {
+        "description": (
+            "High-performing 2,600-word flagship article at Rank #2.0 already earning 95,000 impressions "
+            "(vs. ~108,037 predicted, gap +0.13 log < 0.50). System recommends Hold & Monitor to avoid disruptive rewrites."
+        ),
+        "content_type": "keyword article",
+        "main_intent": "informational",
+        "word_count": 2600,
+        "char_count": 16120,
+        "avg_position": 2.0,
+        "search_volume": 1500,
+        "competition": 0.0,
+        "cpc": 0.94,
+        "content_age_days": 390,
+        "days_since_last_update": 20,
+        "sessions_90d": 310,
+        "pageviews_90d": 356,
+        "users_90d": 298,
+        "engaged_sessions_90d": 6,
+        "days_with_sessions": 70,
+        "engagement_rate": 1.94,
+        "scroll_rate": 6.0,
+        "scroll_events_90d": 21,
+        "ai_sessions_90d": 0,
+        "ai_traffic_pct": 0.0,
+        "actual_impressions_90d": 95000,
+    },
+    "Scenario 6: Low-Potential 3,500-Word Zero-Demand Trap (Rank #85 -> Do Not Rewrite)": {
         "description": (
             "Long 3,500-word article buried at Rank #85 with zero search volume and 1 session. "
             "Naive Word Count heuristic falsely predicts ~474 impressions due to length, whereas our System "
-            "accurately predicts 35 impressions and warns editors NOT to rewrite."
+            "accurately predicts 64 impressions and warns editors NOT to rewrite."
         ),
         "content_type": "keyword article",
         "main_intent": "informational",
@@ -428,21 +455,75 @@ DEMO_PRESETS = {
         "char_count": 21700,
         "avg_position": 85.0,
         "search_volume": 0,
-        "competition": 0.10,
-        "cpc": 0.0,
-        "content_age_days": 320,
+        "competition": 0.0,
+        "cpc": 0.94,
+        "content_age_days": 390,
         "days_since_last_update": 40,
         "sessions_90d": 1,
         "pageviews_90d": 1,
         "users_90d": 1,
         "engaged_sessions_90d": 0,
-        "days_with_sessions": 1,
+        "days_with_sessions": 4,
         "engagement_rate": 0.0,
-        "scroll_rate": 0.0,
+        "scroll_rate": 6.0,
         "scroll_events_90d": 0,
         "ai_sessions_90d": 0,
         "ai_traffic_pct": 0.0,
-        "actual_impressions_90d": 35,
+        "actual_impressions_90d": 45,
+    },
+    "Scenario 7: Page-2 Transactional Comparison (Rank #12.5 -> SERP Push)": {
+        "description": (
+            "1,950-word transactional comparison sitting on Page 2 (Rank #12.5) for a 2,900-volume keyword. "
+            "System predicts ~5,206 impressions (+4,896 upside) and recommends a SERP Striking Distance Push."
+        ),
+        "content_type": "comparison article",
+        "main_intent": "transactional",
+        "word_count": 1950,
+        "char_count": 12090,
+        "avg_position": 12.5,
+        "search_volume": 2900,
+        "competition": 0.0,
+        "cpc": 0.94,
+        "content_age_days": 390,
+        "days_since_last_update": 95,
+        "sessions_90d": 85,
+        "pageviews_90d": 98,
+        "users_90d": 82,
+        "engaged_sessions_90d": 2,
+        "days_with_sessions": 37,
+        "engagement_rate": 2.35,
+        "scroll_rate": 6.0,
+        "scroll_events_90d": 6,
+        "ai_sessions_90d": 0,
+        "ai_traffic_pct": 0.0,
+        "actual_impressions_90d": 310,
+    },
+    "Scenario 8: Short High-Intent Landing Page (550 Words -> Content Expansion)": {
+        "description": (
+            "Thin 550-word transactional page on Page 1 (Rank #7.0) with 3,200 monthly search volume. "
+            "System predicts ~10,937 impressions (+10,417 upside) and prescribes Content Expansion."
+        ),
+        "content_type": "keyword article",
+        "main_intent": "transactional",
+        "word_count": 550,
+        "char_count": 3410,
+        "avg_position": 7.0,
+        "search_volume": 3200,
+        "competition": 0.0,
+        "cpc": 0.94,
+        "content_age_days": 390,
+        "days_since_last_update": 60,
+        "sessions_90d": 90,
+        "pageviews_90d": 103,
+        "users_90d": 86,
+        "engaged_sessions_90d": 2,
+        "days_with_sessions": 38,
+        "engagement_rate": 2.22,
+        "scroll_rate": 6.0,
+        "scroll_events_90d": 6,
+        "ai_sessions_90d": 0,
+        "ai_traffic_pct": 0.0,
+        "actual_impressions_90d": 520,
     },
 }
 
